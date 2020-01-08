@@ -37,6 +37,12 @@ extension UIView {
         return self.frame.width
     }
     
+    func setTop(_ top: CGFloat) {
+        var f = self.frame
+        f.origin.y = top
+        self.frame = f
+    }
+    
     func setWidth(_ width: CGFloat) {
         var f = self.frame
         f.size.width = width
@@ -56,7 +62,7 @@ extension UIView {
     
     func centerInSuperView() {
         self.centerVertically()
-        self.centerHorizontically()
+        self.centerHorizontally()
     }
     
     func centerVertically() {
@@ -68,7 +74,7 @@ extension UIView {
         }
     }
     
-    func centerHorizontically() {
+    func centerHorizontally() {
         if let sv = self.superview {
             self.frame = CGRect(x: (sv.frame.size.width / 2 - self.frame.size.width / 2),
                                 y: self.frame.origin.y,

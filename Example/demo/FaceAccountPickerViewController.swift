@@ -7,31 +7,17 @@
 //
 
 import UIKit
+#if !(targetEnvironment(simulator))
 import ElementSDK
+#endif
 
-/*
- * Main view controller for Face, it showcases the 2 main features:
- * 1/ account creation using FaceUserInitViewController
- *    a/ multi user account creation with "Multi User Enrollment"
- *    b/ doing user enrollment on one account with "Add User"
- * 2/ account authentication using FaceAuthenticationViewController
- *
- * Once created, the accounts will appear in the list, you can then click on one account to authenticate.
- *
- * The "User Sign In" button at the bottom can be used to get an account created on the dashboard,
- * if this feature is enabled for your company.
- * This also enables you to create an account on a device and use it on another device (the biometrics
- * models are synced).
- *
- * Another API this view controller uses is ELTAccount.allAccounts() : this returns the accounts
- * stored on the device.
- */
 class FaceAccountPickerViewController: UIViewController {
-lazy var tableView : UITableView = {
+#if !(targetEnvironment(simulator))
+    lazy var tableView : UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0,
-                                                            y: 0,
-                                                            width: UIScreen.width(),
-                                                            height: UIScreen.height() - 80))
+                                                  y: 0,
+                                              width: UIScreen.width(),
+                                             height: UIScreen.height()))
         tableView.backgroundColor = UIColor.white
         return tableView
     }()
@@ -41,11 +27,6 @@ lazy var tableView : UITableView = {
     var accounts : [ELTAccount]
     
     var emptyStateView : UILabel?
-    
-    var signInButton : UIButton?
-    
-    var identifyButton : UIButton?
-    var identifyLoadingView : UIView?
     
     init() {
         self.accounts = []
@@ -62,31 +43,24 @@ lazy var tableView : UITableView = {
         self.view.backgroundColor = .white
         
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            self.title = "Face " + version
+            self.title = "Local Example " + version
         }
         
         self.tableView.registerClass(FaceAccountTableViewCell.self)
         self.tableView.backgroundColor = .clear
         self.view.addSubview(self.tableView)
         
-        self.signInButton = UIButton()
-        self.signInButton?.frame = CGRect(x: (UIScreen.width() / 2) + 10, y: self.tableView.bottom() + 20, width: (UIScreen.width() / 2) - 20, height: 40)
-        self.signInButton?.setTitle("User Sign In", for: .normal)
-        self.signInButton?.setTitleColor(.blue, for: .normal)
-        self.signInButton?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        self.signInButton?.addTarget(self, action: #selector(FaceAccountPickerViewController.userSignInTapped), for: .touchUpInside)
-        self.signInButton?.layer.borderColor = UIColor.blue.cgColor
-        self.signInButton?.layer.borderWidth = 1
-        self.signInButton?.layer.cornerRadius = 20
-        self.view.addSubview(self.signInButton!)
-        
-        let leftButton = UIBarButtonItem(title: "Add User", style: .plain, target: self, action: #selector(FaceAccountPickerViewController.addAccount))
+        let leftButton = UIBarButtonItem(title: "Enroll", style: .plain, target: self, action: #selector(FaceAccountPickerViewController.addAccount))
         self.navigationItem.leftBarButtonItem = leftButton
+        
+        
+        let rightButton = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(FaceAccountPickerViewController.userSignInTapped))
+        self.navigationItem.rightBarButtonItem = rightButton
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         self.emptyStateView = UILabel(frame: CGRect(x: 10, y: 10, width: UIScreen.width() - 20, height: 80))
-        self.emptyStateView?.text = "No account, tap \'Add User\""
+        self.emptyStateView?.text = "No account, tap \'Enroll\""
         self.emptyStateView?.numberOfLines = 0
         self.emptyStateView?.font = UIFont.systemFont(ofSize: 24)
         self.emptyStateView?.isHidden = true
@@ -100,6 +74,7 @@ lazy var tableView : UITableView = {
     @objc func userSignInTapped() {
         print("user sign in tapped")
         let signInViewController = UserSignInViewController()
+        signInViewController.signInType = .userId
         let signInNavigationController = UINavigationController(rootViewController: signInViewController)
         self.navigationController?.present(signInNavigationController, animated: true) {
         
@@ -169,7 +144,7 @@ lazy var tableView : UITableView = {
         let createAction: UIAlertAction = UIAlertAction(title: "Create", style: .default) { action -> Void in
             let text = (alertController.textFields?.first)?.text
             if let text = text {
-                let account = ELTAccount.createNewAccount(withFirstName: text, lastName: "", email: nil, clearTextPin: nil, extraInfo: nil, userId: NSUUID().uuidString)
+                let account = ELTAccount.createNewAccount(withFirstName: text, lastName: "")
                 self.handleTap(account)
             }
         }
@@ -242,4 +217,5 @@ lazy var tableView : UITableView = {
                 break
         }
     }
+#endif
 }

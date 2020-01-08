@@ -8,6 +8,7 @@
 
 import UIKit
 
+#if !(targetEnvironment(simulator))
 import ElementSDK
 
 class AccountTableViewCell: UITableViewCell, TableViewCellProtocol {
@@ -55,5 +56,5 @@ class AccountTableViewCell: UITableViewCell, TableViewCellProtocol {
     class func heightForModel(_ model: ELTAccount) -> CGFloat {
         return 10 + AccountTableViewCell.labelHeight * 2 + 10 + 10
     }
-
 }
+#endif

@@ -7,17 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#if !(TARGET_IPHONE_SIMULATOR)
 #import <ElementSDK/ElementSDK.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (Element)
 
+#if !(TARGET_IPHONE_SIMULATOR)
 + (ELTAccount *)createAccountWithFirstName:(NSString *)fn lastName:(NSString *)ln;
 
 - (void)pushFaceUserInitViewControllerForAccount:(ELTAccount *)account;
 
 - (void)pushUserAuthenticationViewControllerForAccount:(ELTAccount *)account;
+#endif
 
 @end
 

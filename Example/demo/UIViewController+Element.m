@@ -10,6 +10,7 @@
 
 @implementation UIViewController (Element)
 
+#if !(TARGET_IPHONE_SIMULATOR)
 + (ELTAccount *)createAccountWithFirstName:(NSString *)fn lastName:(NSString *)ln {
     ELTAccount *account = [ELTAccount createNewAccountWithFirstName:fn lastName:ln email:nil clearTextPin:nil extraInfo:nil userId:[NSUUID UUID].UUIDString];
     return account;
@@ -36,5 +37,6 @@
     }];
     [self.navigationController pushViewController:faceAuthenticationVc animated:YES];
 }
+#endif
 
 @end

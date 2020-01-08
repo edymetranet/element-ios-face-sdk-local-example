@@ -8,7 +8,9 @@
 
 import UIKit
 
+#if !(targetEnvironment(simulator))
 import ElementSDK
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,14 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
 
-        ElementSDKConfiguration.shared().initialize(withConfigurationData: "YOUR_ENCRYPTED_ACCESS_KEY")
+#if !(targetEnvironment(simulator))
+        // TODO: replace YOUR_EAK with the EAK provided by Element
+        ElementSDKConfiguration.shared().initialize(withConfigurationData: "YOUR_EAK")
         // upload images to S3 (default is false)
         ElementSDKConfiguration.shared().uploadImages = true
         // geo locate user during authentication (default is false)
         ElementSDKConfiguration.shared().geolocateUser = true
         // change the theme if needed
         ElementSDKConfiguration.shared().theme = .flowerPetals
-        
+#endif
+
         var vc : UIViewController? = nil
         vc = FaceAccountPickerViewController()
         

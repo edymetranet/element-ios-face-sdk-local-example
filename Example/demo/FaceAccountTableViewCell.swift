@@ -7,6 +7,7 @@
 //
 
 import UIKit
+#if !(targetEnvironment(simulator))
 import ElementSDK
 
 class FaceAccountTableViewCell: AccountTableViewCell {
@@ -21,3 +22,4 @@ class FaceAccountTableViewCell: AccountTableViewCell {
         }
     }
 }
+#endif

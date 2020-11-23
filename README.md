@@ -37,7 +37,7 @@ Once you have downloaded and put the Element SDK in the Frameworks directory, yo
 
 ![bundle_identifier](https://github.com/Element1/element-ios-face-sdk-local-example/raw/master/images/bundle_identifier.png "bundle_identifier")
 
-The last step is to edit the AppDelegateProtected.swift file and replace YOUR_ENCRYPTED_ACCESS_KEY with your EAK.
+The last step is to edit the AppDelegateProtected.swift file and replace YOUR_EAK with your EAK.
 
 To run the demo app, click on the arrow on the top left:
 

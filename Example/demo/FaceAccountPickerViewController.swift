@@ -184,11 +184,10 @@ class FaceAccountPickerViewController: UIViewController {
                     vc in
                     print("account is created!")
                     _ = vc.navigationController?.popViewController(animated: true)
-                }, onCancel: {
-                    vc in
+                }) { (viewController, earlyExitReason) in
                     print("user cancelled")
-                    _ = vc.navigationController?.popViewController(animated: true)
-                })
+                    _ = viewController.navigationController?.popViewController(animated: true)
+                }
                 self.navigationController?.pushViewController(userInitViewController!, animated: true)
                 
                 // ObjectiveC
@@ -201,11 +200,10 @@ class FaceAccountPickerViewController: UIViewController {
                     viewController, confidenceScore in
                     print("success authenticating ", account.userId)
                     _ = viewController.navigationController?.popViewController(animated: true)
-                }, onCancel: {
-                    viewController in
-                    print(account.userId, " cancelled authentication")
+                }) { (viewController, earlyExitReason) in
+                    print("user cancelled")
                     _ = viewController.navigationController?.popViewController(animated: true)
-                })
+                }
                 self.navigationController?.pushViewController(vc!, animated: true)
                 
                 // ObjectiveC

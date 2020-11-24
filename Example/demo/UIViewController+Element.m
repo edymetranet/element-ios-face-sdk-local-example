@@ -20,7 +20,7 @@
     LocalFaceEnrollmentViewController *faceUserInitVc = [[LocalFaceEnrollmentViewController alloc] initWithAccount:account completionHandler:^(UIViewController * vc) {
         NSLog(@"completed user enrollment for: %@", account);
         [vc.navigationController popViewControllerAnimated:YES];
-    } onCancel:^(UIViewController * vc) {
+    } onEarlyExit:^(UIViewController * vc, ELTEarlyExitReason reason) {
         NSLog(@"user enrollment cancelled for account: %@", account);
         [vc.navigationController popViewControllerAnimated:YES];
     }];
@@ -31,7 +31,7 @@
     LocalFaceAuthenticationViewController *faceAuthenticationVc = [[LocalFaceAuthenticationViewController alloc] initWithAccount:account onAuthentication:^(UIViewController *vc, CGFloat confidenceScore) {
         NSLog(@"successfully authenticated %@", account);
         [vc.navigationController popViewControllerAnimated:YES];
-    } onCancel:^(UIViewController *vc) {
+    } onEarlyExit:^(UIViewController *vc, ELTEarlyExitReason reason) {
         NSLog(@"user cancelled %@", account);
         [vc.navigationController popViewControllerAnimated:YES];
     }];

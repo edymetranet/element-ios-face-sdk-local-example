@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ElementSDKConfiguration.shared().initialize(withConfigurationData: "YOUR_EAK")
         // upload images to S3 (default is false)
         ElementSDKConfiguration.shared().uploadImages = true
-        // geo locate user during authentication (default is false)
-        ElementSDKConfiguration.shared().geolocateUser = true
         // change the theme if needed
         ElementSDKConfiguration.shared().theme = .flowerPetals
 #endif

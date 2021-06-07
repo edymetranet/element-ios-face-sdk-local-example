@@ -189,6 +189,7 @@
 				TargetAttributes = {
 					4D3742201D88667D009CB5B2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KCMF2PRRMF;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
@@ -321,7 +322,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KCMF2PRRMF;
 				EXCLUDED_SOURCE_FILE_NAMES = ElementSDK.framework;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -331,7 +332,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D FACE_ONLY";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.facesdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = id.metranet.facesdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo/facedemo-Bridging-Header.h";
@@ -394,7 +395,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Element, Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KCMF2PRRMF;
 				EXCLUDED_SOURCE_FILE_NAMES = ElementSDK.framework;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,7 +405,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D FACE_ONLY";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.facesdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = id.metranet.facesdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo/facedemo-Bridging-Header.h";

@@ -26,10 +26,7 @@
       buildConfiguration = "Debug-Face"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -39,14 +36,13 @@
             ReferencedContainer = "container:face_demo_protected.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug-Face"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -63,8 +59,6 @@
             ReferencedContainer = "container:face_demo_protected.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Debug-Face"
@@ -87,7 +81,7 @@
       buildConfiguration = "Debug-Face">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug-Face"
+      buildConfiguration = "Release-Face"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

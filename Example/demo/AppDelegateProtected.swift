@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 #if !(targetEnvironment(simulator))
         // TODO: replace YOUR_EAK with the EAK provided by Element
-        ElementSDKConfiguration.shared().initialize(withConfigurationData: "YOUR_EAK")
+        let eak = "YOUR_EAK"
+        assert(eak != "YOUR_EAK")
+        ElementSDKConfiguration.shared().initialize(withConfigurationData: eak)
         // change the theme if needed
         ElementSDKConfiguration.shared().theme = .flowerPetals
 #endif

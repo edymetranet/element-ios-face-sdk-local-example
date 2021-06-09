@@ -325,7 +325,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D FACE_ONLY";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.facesdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = id.metranet.facesdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo/facedemo-Bridging-Header.h";
@@ -398,7 +398,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D FACE_ONLY";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.facesdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = id.metranet.facesdkdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "demo/facedemo-Bridging-Header.h";

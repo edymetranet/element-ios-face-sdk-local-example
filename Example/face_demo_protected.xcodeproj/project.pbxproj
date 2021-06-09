@@ -10,7 +10,6 @@
 		4D08C1761FE4314A00C2503A /* FaceAccountPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08C1721FE4314A00C2503A /* FaceAccountPickerViewController.swift */; };
 		4D15064B1DB82DE1005C5BAE /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15064A1DB82DE1005C5BAE /* TableView.swift */; };
 		4D34566723A936D200EC83F4 /* FlowerPetals.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D34566023A936D200EC83F4 /* FlowerPetals.bundle */; };
-		4D34566923A936D200EC83F4 /* LocalProcessing.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D34566223A936D200EC83F4 /* LocalProcessing.bundle */; };
 		4D37422C1D88667D009CB5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D37422B1D88667D009CB5B2 /* Assets.xcassets */; };
 		4D37422F1D88667D009CB5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D37422D1D88667D009CB5B2 /* LaunchScreen.storyboard */; };
 		4D3742691D9C92CB009CB5B2 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3742681D9C92CB009CB5B2 /* UIViewController+Alert.swift */; };
@@ -46,7 +45,6 @@
 		4D08C1721FE4314A00C2503A /* FaceAccountPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceAccountPickerViewController.swift; sourceTree = "<group>"; };
 		4D15064A1DB82DE1005C5BAE /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		4D34566023A936D200EC83F4 /* FlowerPetals.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FlowerPetals.bundle; path = Frameworks/FlowerPetals.bundle; sourceTree = "<group>"; };
-		4D34566223A936D200EC83F4 /* LocalProcessing.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LocalProcessing.bundle; path = Frameworks/LocalProcessing.bundle; sourceTree = "<group>"; };
 		4D3742211D88667D009CB5B2 /* facedemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facedemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D37422B1D88667D009CB5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D37422E1D88667D009CB5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				4D34566A23A936D800EC83F4 /* themes */,
-				4D34566223A936D200EC83F4 /* LocalProcessing.bundle */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -222,7 +219,6 @@
 				4D34566723A936D200EC83F4 /* FlowerPetals.bundle in Resources */,
 				4D37422C1D88667D009CB5B2 /* Assets.xcassets in Resources */,
 				4DF0A14F2611F34700A92E1F /* SelfieDotV2.bundle in Resources */,
-				4D34566923A936D200EC83F4 /* LocalProcessing.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

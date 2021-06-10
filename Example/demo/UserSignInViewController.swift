@@ -28,15 +28,19 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         let textField = UITextField()
         textField.frame = CGRect(x: 10, y: 0, width: UIScreen.main.bounds.size.width - 20, height: 50)
         textField.backgroundColor = UIColor.white
-        textField.textColor = UIColor.darkGray
+        textField.textColor = UIColor.darkText
         textField.borderStyle = .roundedRect
-        textField.placeholder = placeholder
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 8
+        textField.layer.masksToBounds = true
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 199.0/255, green: 199.0/255, blue: 205.0/255, alpha: 1.0)])
         textField.font = UIFont.systemFont(ofSize: 20)
         return textField
     }
 
     lazy var userIdTextField : UITextField = {
-        let tf = UserSignInViewController.makeGenericTextField("userId")
+        let tf = UserSignInViewController.makeGenericTextField("User Id")
         var frame = tf.frame
         frame.origin.y = 80
         tf.frame = frame
@@ -44,7 +48,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         return tf
     }()
     lazy var emailTextField : UITextField = {
-        let tf = UserSignInViewController.makeGenericTextField("email")
+        let tf = UserSignInViewController.makeGenericTextField("Email")
         var frame = tf.frame
         frame.origin.y = 80
         tf.frame = frame
@@ -52,7 +56,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         return tf
     }()
     lazy var pinTextField : UITextField = {
-        let tf = UserSignInViewController.makeGenericTextField("pin")
+        let tf = UserSignInViewController.makeGenericTextField("PIN")
         var frame = tf.frame
         frame.origin.y = 140
         tf.frame = frame
